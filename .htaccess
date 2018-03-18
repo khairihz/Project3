@@ -1,3 +1,4 @@
+#Enleve le directory ,et l'accés interdit de l'app
 <IfModule mod_rewrite.c>
   RewriteEngine on
   RewriteRule ^$ /public/ [L]
