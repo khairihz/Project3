@@ -26,6 +26,11 @@ class Core {
         }
 
         //Exiger le controlleur
+        require_once '../app/controllers/'.$this->currentController.'.php';
+
+        //instantier la classe de controleur
+        $this->currentController = new $this->currentController;
+        // Exemple = $pages = new pages
     }
 
     //Test si un paramétre existe dans l'url et filtrer l'url des espaces blanc,et suppresion des caractéres spéciaux
