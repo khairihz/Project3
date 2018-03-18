@@ -1,0 +1,11 @@
+# Des directives apache
+# Vérification du mod rewrite
+<IfModule mod_rewrite.c>
+#éviter de prêter à confusiondans la réecriture d'url
+  Options -Multiviews
+  RewriteEngine On
+  RewriteBase /webapp/Project3/public
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
