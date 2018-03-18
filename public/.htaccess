@@ -4,7 +4,7 @@
 #éviter de prêter à confusiondans la réecriture d'url
   Options -Multiviews
   RewriteEngine On
-  RewriteBase /webapp/Project3/public
+  RewriteBase /Project3/public
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
