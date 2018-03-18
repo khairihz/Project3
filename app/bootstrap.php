@@ -1,2 +1,6 @@
-it's not a file for a template bootstrap<br>
-it's a file that going require all the necessary files , that we need . 
+<?php
+
+//Charger les librairies
+require_once 'librairies/core.php'; 
+require_once 'librairies/controller.php'; 
+require_once 'librairies/database.php'; 
