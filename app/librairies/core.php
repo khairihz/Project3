@@ -13,7 +13,19 @@ class Core {
     protected $params = [];
 
     public function __construct(){
-        print_r($this->getUrl());
+        //print_r($this->getUrl());
+
+        $url = $this->getUrl();
+
+        //Chercher la première valeur dans le controlleur
+        if(file_exists('../app/controllers/' .ucwords($url[0]).'.php')){
+        // Si la valeur exist , on la définit comme controlleur par défaut et le paramétre écrasera 'Pages'
+        $this->currentController = ucwords($url[0]);
+        // unset 0 index
+        unset($url[0]);
+        }
+
+        //Exiger le controlleur
     }
 
     //Test si un paramétre existe dans l'url et filtrer l'url des espaces blanc,et suppresion des caractéres spéciaux
