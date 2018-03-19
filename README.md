@@ -3,7 +3,7 @@ Blog Jean Forteroche
 
 Bref explication de la méthode du travail :
 
-1-Étape 1 : Mise en place d'un systéme de réécriture d'url grâce à .htaccess , ensuite definir notre fichier de bootstrapping qui sera amener à charger nos librairies et ainsi  l'obtention du bon contrôleur grâce au Core et qu'il va nous servir à exécuter le bon controleur,la bonne méthode et les bons paramétres envoyer par l'url.
+1-Étape 1 : Mise en place d'un systéme de réécriture d'url grâce à .htaccess , ensuite definir notre fichier de bootstrapping qui sera amener à charger nos librairies et ainsi  l'obtention du bon contrôleur grâce au Core qui lui va servir à Mapper l'URL au contôleur puis aux méthodes puis vers le fichier .htaccess (RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L])
 
 2-Étape 2 : Création de l'architecture MVC et plus précisement  la configuration de la base de des données et création de la vue . 
 
