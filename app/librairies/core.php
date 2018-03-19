@@ -17,7 +17,7 @@ class Core {
 
         $url = $this->getUrl();
 
-        //Chercher la première valeur dans le controlleur
+        //Chercher la première valeur dans le controlleur URL 1
         if(file_exists('../app/controllers/' .ucwords($url[0]).'.php')){
         // Si la valeur exist , on la définit comme controlleur par défaut et le paramétre écrasera 'Pages'
         $this->currentController = ucwords($url[0]);
@@ -31,6 +31,24 @@ class Core {
         //instantier la classe de controleur
         $this->currentController = new $this->currentController;
         // Exemple = $pages = new pages
+
+        // Chercher la deuxiéme valeur de l'url : URL 2
+        if(isset($url[1])){
+        // Vérifier si la méthode exist dans le controlleur , exemple $Pages->About() === $url[about()]
+                if(method_exists($this->currentController, $url[1])){
+                $this->currentMethod = $url[1];
+                //unset 1 index
+                unset($url[1]);
+            }
+        }
+        // Obtenir le paramétre de la 3éme valeur de l'url
+        $this->params = $url ? array_values($url) : [];
+        
+        //Appelle une fonction de rappel avec les paramètres rassemblés en tableau
+        //Exemple : $pages = New pages , $pages->about(), $params = [1]
+        call_user_func_array([$this->currentController,
+                             $this->currentMethod], $this->params);
+
     }
 
     //Test si un paramétre existe dans l'url et filtrer l'url des espaces blanc,et suppresion des caractéres spéciaux
