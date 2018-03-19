@@ -1,6 +1,14 @@
 <?php
 
-//Charger les librairies
-require_once 'librairies/core.php'; 
-require_once 'librairies/controller.php'; 
-require_once 'librairies/database.php'; 
+
+    require_once 'config/config.php';
+
+    //require_once 'libraries/Core.php';
+    //require_once 'libraries/Controller.php';
+    //require_once 'libraries/Database.php';
+
+    spl_autoload_register(function($className){
+        require_once 'libraries/' . $className .'.php';
+    })
+
+?>

@@ -13,6 +13,6 @@ define('DB_NAME','project3');
     
 
 define('APPROOT', dirname(dirname(__FILE__))); //Renvoie le chemin de dossier parent
-define('URLROOT', 'http://localhost/framework');
+define('URLROOT', 'http://localhost/project3');
 define('SITENAME','Blog Jean Forteroche');
 define('APPVERSION','2.0.0');
