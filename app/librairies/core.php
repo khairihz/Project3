@@ -34,7 +34,7 @@ class Core {
 
         // Chercher la deuxiéme valeur de l'url : URL 2
         if(isset($url[1])){
-        // Vérifier si la méthode exist dans le controlleur , exemple $Pages->About() === $url[about()]
+        // Vérifier si la méthode exist dans le controlleur , exemple method_exists($pages = new Pages , about())
                 if(method_exists($this->currentController, $url[1])){
                 $this->currentMethod = $url[1];
                 //unset 1 index
