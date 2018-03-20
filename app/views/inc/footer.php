@@ -40,7 +40,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="<?php echo URLROOT; ?>/bootstrap/js/clean-blog.min.js"></script>
-  </div>
   </body>
 
 </html>
