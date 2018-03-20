@@ -15,7 +15,7 @@
               <a class="nav-link" href="<?php echo URLROOT;?>/pages/about">À propos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo URLROOT;?>/users/login">Administrateur</a>
+              <a class="nav-link" href="<?php echo URLROOT;?>/user/login">Administrateur</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URLROOT;?>/users/Contact">Contact</a>
