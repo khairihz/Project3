@@ -13,6 +13,6 @@
       </div>
     </header>
 <div class="container">
-    <h1></h1>
+    <p class="lead"><?php echo $data['about'];?></p>
 </div>
 <?php  require APPROOT .'/views/inc/footer.php'; ?>
