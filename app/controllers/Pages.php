@@ -6,7 +6,8 @@
 
         }
         public function index(){
-            $this->view('pages/index', ['title'=>'Jean Forteroche']);
+            $post = $this->postModel->getPosts();
+            $this->view('pages/index', ['title'=>'Jean Forteroche','posts'=> $post]);
         }
         
         public function about(){
