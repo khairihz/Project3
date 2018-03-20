@@ -18,10 +18,19 @@
 
     public function __construct(){
         //Connecion à la base de données
-        $dsn = 'mysql:host='.$this->host.';dbname='. $this->dname;
+        $dsn = 'mysql:host='.$this->host.';dbname='. $this->dbname;
         $options =  array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
+
+        //créer une instance PDO
+        try{
+            $this->dbh = new PDO($dsn, $this->user, $this->pass, $options)
+            ;
+        }catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
     }
  }
