@@ -6,7 +6,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
               <h1><?php echo $data['title']?></h1>
-              <span class="subheading">Voici ce que je fais</span>
+              <span class="subheading"><?php echo $data['description']?></span>
             </div>
           </div>
         </div>
