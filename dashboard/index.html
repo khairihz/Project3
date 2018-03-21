@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Dashboard</title>
+    <title>Admin | Tableau de bord</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -28,7 +28,7 @@
             <li class="active"><a href="index.html">Tableau de bord</a></li>
             <li><a href="pages.html">Épisodes</a></li>
             <li><a href="posts.html">Commentaires</a></li>
-            <li><a href="users.html"></a></li>
+            <li><a href="users.html">Commentaires signalés</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Bienvenue, Jean</a></li>
@@ -42,18 +42,17 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tableau de bord <small>administration</small></h1>
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tableau de bord <small>Administrez votre blog</small></h1>
           </div>
           <div class="col-md-2">
-
             <div class="dropdown create">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Création des chapitres
+                Creation du contenu
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a type="button" data-toggle="modal" data-target="#addpost">Ajouter Épisodes</a></li>
-                <li><a href="#">Gestion des commentaires</a></li>
+                <li><a type="button" data-toggle="modal" data-target="#addPage">Ajouter Épisode</a></li>
+                <li><a href="#">Ajouter commentaire</a></li>
               </ul>
             </div>
           </div>
@@ -71,110 +70,127 @@
 
     <section id="main">
       <div class="container">
-        <div class="div row">
+        <div class="row">
           <div class="col-md-3">
             <div class="list-group">
               <a href="index.html" class="list-group-item active main-color-bg">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tableau de bord
               </a>
-              <a href="post.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Épisodes<span class="badge">12</span></a>
-              <a href="comment.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><span class="badge">33</span>Commentaires</a>
+              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Episodes <span class="badge">12</span></a>
+              <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Commentaires <span class="badge">33</span></a>
+              <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Commentaires Signalés <span class="badge">203</span></a>
             </div>
           </div>
           <div class="col-md-9">
+            <!-- Website Overview -->
             <div class="panel panel-default">
               <div class="panel-heading main-color-bg">
                 <h3 class="panel-title">Aperçu du site</h3>
               </div>
-
-          <div class="panel-body">
-            <div class="col-md-4">
-              <div class="well dash-box">
-                <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
-                 <h4>Épisodes</h4>
+              <div class="panel-body">
+                <div class="col-md-4">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 20</h2>
+                    <h4>Épisodes</h4>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 43</h2>
+                    <h4>Commentaires</h4>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 7</h2>
+                    <h4>Commentaires Signalés</h4>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="well dash-box">
-                <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 40</h2>
-                <h4>Commentaires</h4>
               </div>
-            </div>
 
-            <div class="col-md-4 dash-box">
-              <div class="well">
-                <h2><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> 2</h2>
-                <h4>signalés</h4>
+              <!-- Latest Users -->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Les épisodes</h3>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-hover">
+                      <tr>
+                        <th>Numéro d'épisode</th>
+                        <th>Épisodes</th>
+                        <th>Date de publication</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Préface</td>
+                        <td>21 Mars 2018</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Le début de l'aventure</td>
+                        <td>22 Mars 2018</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Nouvelle vie</td>
+                        <td>23 Mars 2018</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Que du bonheur</td>
+                        <td>24 Mars 2018</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Je rencontre l'amour</td>
+                        <td>25 Mars 2018</td>
+                      </tr>
+                    </table>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- les pages -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Les derniers Épisodes</h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-striped table-hover">
-                    <tr>
-                      <th>Title</th>
-                      <th>Published</th>
-                      <th>Created</th>
-                      <th></th>
-                    </tr>
-                    <tr>
-                      <td>Blog Post 1</td>
-                      <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                      <td>Dec 12, 2016</td>
-                      <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                      <td>Blog Post 2</td>
-                      <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                      <td>Dec 13, 2016</td>
-                      <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                      <td>Blog Post 3</td>
-                      <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
-                      <td>Dec 13, 2016</td>
-                      <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                    </tr>
-                    <tr>
-                      <td>Blog Post 4</td>
-                      <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
-                      <td>Dec 14, 2016</td>
-                      <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
-                    </tr>
-                  </table>
-            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
 
-    <!--modales-->
-    <!--Ajouter episodes-->
-    <div class="modal fade" id="addpost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
+    <footer id="footer">
+      <p>Copyright Kheireddine hezzi &copy; 2018</p>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Add Page -->
+    <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ajouter épisodes</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Titre</label>
+          <input type="text" class="form-control" placeholder="Titre de page">
+        </div>
+        <div class="form-group">
+          <label>Contenu</label>
+          <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
+  <script>
+     CKEDITOR.replace( 'editor1' );
+ </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
