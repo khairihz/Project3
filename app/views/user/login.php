@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-    <form id="login" action="<?php echo URLROOT; ?>/posts/index" class="well" method="post">
+    <form id="login" action="<?php echo URLROOT; ?>/user/login" class="well" method="post">
     <h2 style="margin-bottom: 20px;">Se connecter</h2>
           <div class="form-group">
             <label for="email">Adresse mail:<sup>*</sup></label>
