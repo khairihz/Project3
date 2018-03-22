@@ -15,12 +15,4 @@
 <div class="container">
     <p class="lead"><?php echo $data['about'];?></p>
 </div>
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <div class="card card-body bg-light mt-5">
-            <h2>Se connecter</h2>
-            <p>Veuillez vous connectez pour accéder à l'espace d'administration</p>
-        </div>
-    </div>
-</div>
 <?php  require APPROOT .'/views/inc/footer.php'; ?>

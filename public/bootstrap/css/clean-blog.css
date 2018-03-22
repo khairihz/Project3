@@ -3,6 +3,36 @@ body {
   color: #292125;
   font-family: 'Lora', 'Times New Roman', serif;
 }
+/*bricolage*/
+.menu
+{
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+.image{
+  margin-bottom: 0px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+
+}
+.login{
+  margin-top: 173px;
+}
+
+/*CSS du template */
 
 p {
   line-height: 1.5;
@@ -112,17 +142,16 @@ img::-moz-selection {
   }
   #mainNav .navbar-brand {
     padding: 10px 20px;
-    color: #fff;
+    color: #212529;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: rgba(255, 255, 255, 0.8);
   }
   #mainNav .navbar-nav > li.nav-item > a {
     padding: 10px 20px;
-    color: #fff;
+    color: #212529;
   }
   #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: #212529;
   }
 }
 
