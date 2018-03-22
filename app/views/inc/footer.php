@@ -40,6 +40,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="<?php echo URLROOT; ?>/bootstrap/js/clean-blog.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<?php echo URLROOT; ?>dashboard/js/bootstrap.min.js"></script>
   </body>
 
 </html>
