@@ -30,7 +30,7 @@ Class User {
 
         $row = $this->db->single();
 
-        // Check row
+        // vérifier la valeur si vrai ou faux
         if($this->db->rowCount() > 0){
             return true;
         } else {

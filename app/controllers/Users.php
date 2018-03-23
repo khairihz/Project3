@@ -1,7 +1,8 @@
 <?php
-    class User extends Controller{
+    
+    class Users extends Controller{
         public function __construct(){
-
+            $this->userModel = $this->model('User');
         }
 
         public function login(){
@@ -46,11 +47,11 @@
                         $this->createUserSession($loggedInuser);
                     }else{
                         $data['password_err'] = 'Password incorrect';
-                        $this->view('user/login', $data);
+                        $this->view('users/login', $data);
                     }
                     }else{
                         //charger la view avec des erreurs
-                        $this->view('user/login', $data);
+                        $this->view('users/login', $data);
                     }
                 }
                     else{
@@ -63,7 +64,7 @@
                             ];
 
                         //load view
-                        $this->view('user/login', $data);
+                        $this->view('users/login', $data);
                          }
                         }
 
@@ -79,7 +80,7 @@
                     unset($_SESSION['user_email']);
                     unset($_SESSION['user_name']);
                     session_destroy();
-                    redirect('user/login');
+                    redirect('users/login');
                         }
 
 
