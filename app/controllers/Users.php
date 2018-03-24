@@ -28,12 +28,12 @@
                 if(empty($data['password'])){
                     $data['password_err'] ='Veuillez insérer votre mot de passe';
                 }
-                //vérification l'administrateur et l'email
+                //vérification d'admin/email
                 if($this->userModel->findUserByemail($data['email'])){
-                    //utilisateur trouvé
+                    //Administrateur trouvé
                 }else{
                     //utilisateur non trouvé 
-                    $data['email_err'] = 'Aucun utilisateur n\'a été trouvé';
+                    $data['email_err'] = 'Aucun administrateur n\'a été trouvé';
                 }
                 // s'assurer que les erreurs sont vides 
                 if(empty($data['email_err']) && empty($data['password_err'])){
@@ -73,7 +73,7 @@
                         $_SESSION['user_email'] = $user->email;
                         $_SESSION['user_name'] = $user->name;
 
-                        redirect('posts');
+                        redirect('admin/index');
                         }
 
                     public function logout(){
