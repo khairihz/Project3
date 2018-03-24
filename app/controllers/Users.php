@@ -42,6 +42,8 @@
                     // vérifier et définir l'utilisateur connecté
                     $loggedInuser = $this->userModel->login($data['email'], $data['password']);
 
+                    
+                    //Script quand on est loggé
                     if($loggedInuser){
                         //create Session
                         $this->createUserSession($loggedInuser);
