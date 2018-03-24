@@ -13,4 +13,5 @@
         </div>
       </div>
     </header>
+    </section>
 <?php  require APPROOT .'/views/inc/footer.php'; ?>
