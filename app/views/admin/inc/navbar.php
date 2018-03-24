@@ -18,7 +18,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Bienvenue, Jean</a></li>
-            <li><a href="<?php echo URLROOT;?>/users/login">Déconnexion</a></li>
+            <li><a href="<?php echo URLROOT;?>/users/logout">Déconnexion</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

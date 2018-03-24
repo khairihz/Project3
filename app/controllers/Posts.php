@@ -2,10 +2,10 @@
 
     class Posts extends Controller {
         public function __construct(){
-            echo 'Posts loaded';
         }
         
         public function index(){
-            $this->view('hello');
+            $data =[];
+            $this->view('posts/index', $data);
         }
     }

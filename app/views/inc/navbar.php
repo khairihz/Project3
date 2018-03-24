@@ -14,9 +14,15 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URLROOT;?>/pages/about">À propos</a>
             </li>
+            <?php if(isset($_SESSION['user_id'])) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT;?>/users/logout">Déconnexion</a>
+            </li>
+            <?php else: ?>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URLROOT;?>/users/login">Administrateur</a>
             </li>
+          <?php endif; ?>
           </ul>
         </div>
       </div>
