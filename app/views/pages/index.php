@@ -12,6 +12,5 @@
           </div>
         </div>
       </div>
-    </header>
-    </section>
+</header>
 <?php  require APPROOT .'/views/inc/footer.php'; ?>
