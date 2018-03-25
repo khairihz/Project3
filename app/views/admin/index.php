@@ -13,7 +13,7 @@
           <div class="col-md-3">
             <div class="list-group">
               <a href="index.html" class="list-group-item active main-color-bg">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <?php echo $data ['description'] ?>
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tableau de bord
               </a>
               <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Episodes <span class="badge">12</span></a>
               <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Commentaires <span class="badge">33</span></a>
@@ -61,30 +61,12 @@
                         <th>Date de publication</th>
                       </tr>
                       <tr>
-                        <td>1</td>
-                        <td>Préface</td>
-                        <td>21 Mars 2018</td>
+                      <?php foreach ($data['admin'] as $post) : ?>
+                        <td><?php echo $post->id; ?></td>
+                        <td><?php echo $post->title;?></td>
+                        <td><?php echo $post->c_date ?></td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Le début de l'aventure</td>
-                        <td>22 Mars 2018</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Nouvelle vie</td>
-                        <td>23 Mars 2018</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Que du bonheur</td>
-                        <td>24 Mars 2018</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>Je rencontre l'amour</td>
-                        <td>25 Mars 2018</td>
-                      </tr>
+                      <?php endforeach ; ?>
                     </table>
                 </div>
               </div>

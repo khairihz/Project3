@@ -18,4 +18,19 @@ class Post{
 
         return $results;
     }
+    public function addPost($data){
+        $this->db->query('INSERT INTO posts (title, user_id, content) VALUES(:title, :user_id , :content)');
+
+        // Bind Values
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':content', $data['content']);
+
+        //Execute
+        if($this->db->execute()){
+            return true ;
+        }else {
+            return false ;
+        }
+        }
 }
