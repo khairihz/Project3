@@ -14,9 +14,7 @@ class Admin extends controller{
     }
 
     public function add(){
-        if(!isLoggedIn()){
-            redirect('users/login');
-        }
+
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Assainir le tableau des articles
             $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING);
@@ -43,14 +41,14 @@ class Admin extends controller{
             //validation
             if($this->postModel->addPost($data)){
                 flash('post_message','Chapitre ajouté');
-                redirect('posts');
+                redirect('admin');
             }else{
                 die('une erreur se produite');
             }
 
             }else{
             // charger le view
-            $this->view('admin/index', $data);
+            $this->view('admin/add', $data);
 
             }
 

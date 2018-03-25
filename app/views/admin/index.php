@@ -2,7 +2,7 @@
 <section id="breadcrumb">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="active">Tableau de bord</li>
+          <li class="active"><?php flash('post_message');?></li>
         </ol>
       </div>
     </section>
@@ -10,16 +10,7 @@
     <section id="main">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <div class="list-group">
-              <a href="index.html" class="list-group-item active main-color-bg">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Tableau de bord
-              </a>
-              <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Episodes <span class="badge">12</span></a>
-              <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Commentaires <span class="badge">33</span></a>
-              <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Commentaires Signalés <span class="badge">203</span></a>
-            </div>
-          </div>
+<?php require APPROOT .'/views/admin/inc/widget.php';?>
           <div class="col-md-9">
             <!-- Website Overview -->
             <div class="panel panel-default">
