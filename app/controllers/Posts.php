@@ -13,4 +13,10 @@
             ];
             $this->view('posts/index', $data);
         }
+        //
+        public function show($id){
+            $data =[];
+            
+            $this->view('posts/show', $data)
+        }
     }
