@@ -50,12 +50,19 @@
                         <th>Numéro d'épisode</th>
                         <th>Épisodes</th>
                         <th>Date de publication</th>
+                        <th></th>
+                        <th></th>
                       </tr>
                       <tr>
                       <?php foreach ($data['admin'] as $post) : ?>
                         <td><?php echo $post->id; ?></td>
                         <td><?php echo $post->title;?></td>
                         <td><?php echo $post->c_date ?></td>
+                        <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/edit">Modifier</a></td>
+                        <td><form class ="pull-right" action ="<?php URLROOT; ?>/posts/delete/<?php echo $data['post']->id;?>" method ="post">
+                            <input class="btn btn-danger" type ="submit" value "Supprimer">
+                            </form>
+                        </td>
                       </tr>
                       <?php endforeach ; ?>
                     </table>
