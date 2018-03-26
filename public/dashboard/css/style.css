@@ -126,6 +126,16 @@ color:white;
 #login{
   margin-top:100px;
 }
+.form-group .is-invalid{
+  display: block;
+  border-color: #dc3545;
+
+}
+.invalid-feedback
+{
+  border-color: #dc3545;
+  color:red;
+}
 
 /* Footer */
 #footer{
