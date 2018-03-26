@@ -61,8 +61,16 @@ class Admin extends controller{
                 'content' => ''
                ];
 
-       $this->view('admin/add', $data);
+            $this->view('admin/add', $data);
 
             }
+    }
+    public function edit($id){
+        $post = $this->postModel->getPostById($id);
+        $data =[
+            'post'=> $post
+        ];
+
+        $this->view('admin/edit', $data);
     }
 }
