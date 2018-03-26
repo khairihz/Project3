@@ -15,8 +15,11 @@
         }
         //
         public function show($id){
-            $data =[];
-            
-            $this->view('posts/show', $data)
+            $post = $this->postModel->getPostById($id);
+            $data =[
+                'post'=> $post
+            ];
+
+            $this->view('posts/show', $data);
         }
     }
