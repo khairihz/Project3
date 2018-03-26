@@ -33,4 +33,12 @@ class Post{
             return false ;
         }
         }
+    public function getPostById($id){
+        $this->db->query('SELECT *,DATE_FORMAT(created_at,\'%d-%m-%Y à %Hh%imin%ss\') AS
+        c_date FROM posts WHERE id = :id');
+        $this->db->bind(':id',$id);
+
+        $row = $this->db->single();
+        return $row;
+    }
 }
