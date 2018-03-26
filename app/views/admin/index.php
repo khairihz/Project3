@@ -59,7 +59,7 @@
                         <td><?php echo $post->id; ?></td>
                         <td><?php echo $post->title;?></td>
                         <td><?php echo $post->c_date ?></td>
-                        <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/edit">Modifier</a></td>
+                        <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/edit/<?php echo $post->id; ?>">Modifier</a></td>
                         <td>
                             <input form ="del" type ="submit" value="Supprimer" class ="btn btn-danger"/>
                             </td>

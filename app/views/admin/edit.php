@@ -11,20 +11,20 @@
                 <h3 class="panel-title">Modifier l'épisode</h3>
             </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Modifier l'épisode</h3>
-        </div>
     <div class="panel-body">
-        <form>
+        <form action ="<?php echo URLROOT; ?>/admin/edit/<?php echo $data['id']; ?>" method = "post">
             <div class="form-group">
             <label>Titre de l'épisode</label>
-            <input type="text" class="form-control" placeholder="Page Title" value="Titre de l'épisode">
+            <input type="text" class="form-control <?php echo (!empty(@$data
+            ['title_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Page Title" value="Titre de l'épisode"
+            "<?php $data['title'];?>">
+            <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
             </div>
             <div class="form-group">
             <label>Contenu</label>
-            <textarea name="content" class="form-control" placeholder="Page Body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <textarea name="content" class="form-control <?php echo (!empty(@$data
+                ['content_err'])) ? 'is-invalid' : '' ; ?>"<?php echo $data['content'];?>
+             placeholder="Page Body">
             </textarea>
             </div>
             <div class="form-group">
@@ -35,4 +35,5 @@
         </div>
         </div>
     </div>
-<?php require APPROOT .'/views/admin/inc/widget.php';?>
+</section>
+<?php require APPROOT .'/views/admin/inc/footer.php';?>
