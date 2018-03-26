@@ -45,6 +45,7 @@
                   <h3 class="panel-title">Derniers épisodes</h3>
                 </div>
                 <div class="panel-body">
+                <form  action ="<?php URLROOT; ?>/admin/delete/<?php echo $data['post']->id;?>" method ="post" id="del">
                   <table class="table table-striped table-hover">
                       <tr>
                         <th>Numéro d'épisode</th>
@@ -59,13 +60,13 @@
                         <td><?php echo $post->title;?></td>
                         <td><?php echo $post->c_date ?></td>
                         <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/edit">Modifier</a></td>
-                        <td><form class ="pull-right" action ="<?php URLROOT; ?>/posts/delete/<?php echo $data['post']->id;?>" method ="post">
-                            <input class="btn btn-danger" type ="submit" value "Supprimer">
-                            </form>
-                        </td>
+                        <td>
+                            <input form ="del" type ="submit" value="Supprimer" class ="btn btn-danger"/>
+                            </td>
                       </tr>
                       <?php endforeach ; ?>
                     </table>
+                    </form>
                 </div>
               </div>
           </div>
