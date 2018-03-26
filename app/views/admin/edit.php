@@ -15,16 +15,15 @@
         <form action ="<?php echo URLROOT; ?>/admin/edit/<?php echo $data['id']; ?>" method = "post">
             <div class="form-group">
             <label>Titre de l'épisode</label>
-            <input type="text" class="form-control <?php echo (!empty(@$data
-            ['title_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Page Title" value="Titre de l'épisode"
-            "<?php $data['title'];?>">
+            <input type="text" name="title" class="form-control <?php echo (!empty(@$data
+            ['title_err'])) ? 'is-invalid' : '' ; ?>"  value="<?php echo $data['title'];?>">
             <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
             </div>
             <div class="form-group">
             <label>Contenu</label>
             <textarea name="content" class="form-control <?php echo (!empty(@$data
-                ['content_err'])) ? 'is-invalid' : '' ; ?>"<?php echo $data['content'];?>
-             placeholder="Page Body">
+            ['content_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Page Body">
+            <?php echo $data['content'];?>
             </textarea>
             </div>
             <div class="form-group">
