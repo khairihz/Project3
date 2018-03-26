@@ -33,6 +33,20 @@ class Post{
             return false ;
         }
         }
+    public function updatePost($data){
+        $this->db->query('UPDATE  posts SET title = :title, content = :content WHERE id = :id');
+        // Bind Values
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':content', $data['content']);
+
+        //Execute
+        if($this->db->execute()){
+            return true ;
+        }else {
+            return false ;
+        }
+        }
     public function getPostById($id){
         $this->db->query('SELECT *,DATE_FORMAT(created_at,\'%d-%m-%Y à %Hh%imin%ss\') AS
         c_date FROM posts WHERE id = :id');
