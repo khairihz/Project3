@@ -25,6 +25,7 @@ class Post{
         $this->db->bind(':title', $data['title']);
         $this->db->bind(':user_id', $data['user_id']);
         $this->db->bind(':content', $data['content']);
+        $this->db->bind(':id',$data['id']);
 
         //Execute
         if($this->db->execute()){
