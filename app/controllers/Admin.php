@@ -14,6 +14,9 @@ class Admin extends controller{
     }
 
     public function add(){
+        if(!isLoggedIn()){
+            redirect('users/login');
+        }
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Assainir le tableau des articles
