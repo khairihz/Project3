@@ -123,4 +123,16 @@ class Admin extends controller{
             $this->view('admin/edit', $data);
     }
 }
+        public function delete($id){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                if($this->postModel->deletePost($id)){
+                    flash('post_message','Épisode supprimé');
+                    redirect('admin');
+                } else{
+                    die('Quelque chose a mal tourné');
+                }
+            }else{
+                redirect('admin');
+            }
+        }
 }
