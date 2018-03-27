@@ -125,6 +125,9 @@ class Admin extends controller{
 }
         public function delete($id){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                $post = $this->postModel->getPostById($id);
+
                 if($this->postModel->deletePost($id)){
                     flash('post_message','Épisode supprimé');
                     redirect('admin');
