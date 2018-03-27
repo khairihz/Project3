@@ -5,6 +5,9 @@ class Admin extends controller{
         $this->userModel = $this->model('User');
     }
     public function index(){
+                if(!isLoggedIn()){
+            redirect('users/login');
+        }
             // renvoyer les épisodes
             $posts = $this->postModel->getPosts();
             $data = [
@@ -67,6 +70,9 @@ class Admin extends controller{
     }
     public function edit($id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if(!isLoggedIn()){
+                redirect('users/login');
+            }
             // Assainir le tableau des articles
             $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -74,7 +80,6 @@ class Admin extends controller{
             'id' => $id,
             'title' => trim($_POST['title']),
             'content' => trim($_POST['content']),
-            'user_id' => $_SESSION['user_id'],
             'title_err' => '',
             'content_err' => ''
             ];
@@ -106,6 +111,9 @@ class Admin extends controller{
 
             }else{
             $post = $this->postModel->getPostById($id);
+            if($post->user_id != $_SESSION['user_id']){
+                redirect('users/login');
+            }
             $data =[
             'id'=>$id,
             'title' => $post->title,
