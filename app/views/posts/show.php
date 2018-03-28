@@ -29,26 +29,30 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-          <form name="sentMessage" id="contactForm" novalidate>
+          <form action="<?php URLROOT;?>/posts/comment/<?php echo $data['id']; ?>" name="sentMessage" id="contactForm" novalidate method="post">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <label>Name</label>
-                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
+                <label for="author">Nom</label>
+                <input type="text" class="form-control <?php echo (!empty(@$data
+                ['title_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Nom" id="name" value="<?php $data['title'];?>">
+                <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
               </div>
             </div>
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <label>Message</label>
-                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                <p class="help-block text-danger"></p>
+                <label for="content">Message</label>
+                <textarea rows="5" class="form-control <?php echo (!empty(@$data
+                ['content_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Message" id="message" 
+                <?php echo $data['content'];?>>
+                </textarea>
+                <span class="invalid-feedback"><?php echo @$data['content_err']; ?></span>
               </div>
             </div>
             <br>
             <div id="success"></div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Commenter</button>
             </div>
           </form>
         </div>

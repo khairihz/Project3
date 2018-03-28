@@ -22,4 +22,8 @@
 
             $this->view('posts/show', $data);
         }
+        public function comment($id){
+            $posts = $this->postModel->getComments();
+
+        }
     }
