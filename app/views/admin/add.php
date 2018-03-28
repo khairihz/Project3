@@ -19,6 +19,12 @@
                 ['title_err'])) ? 'is-invalid' : '' ; ?>" value="<?php $data['title'];?>">
                 <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
             </div>
+            <div class="form-group">
+                <label for="number_e">Numéro de l'épisode</label>
+                <input type="number" name ="number" placeholder="<?php echo $_SESSION['max_number'];?>"  class="form-control <?php echo (!empty(@$data
+                ['number_err'])) ? 'is-invalid' : '' ; ?>" value="<?php echo $data['number_e'];?>">
+                <span class="invalid-feedback"><?php echo @$data['number_err']; ?></span>
+            </div>
 
             <div class="form-group">
                 <label for= "content">Contenu :</label>

@@ -24,6 +24,23 @@
         </div>
       </div>
     </article>
+    <article class="comment">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+    <h2>Commentaires</h2>
+    <?php var_dump($data['comments']); ?>
+
+  <?php foreach ($data['comments'] as $comments) : ?>
+
+    <p><strong><?php echo $comments->comment ;?></strong> le <?php echo $comments->comment_date_fr; ?></p>
+    <p><?php echo $comments->comment;?></p>
+  <?php endforeach;?>
+  </div>
+  </div>
+  </div>
+
+    </article>
 
     <article>
       <div class="container">

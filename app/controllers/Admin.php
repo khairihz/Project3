@@ -30,8 +30,9 @@ class Admin extends controller{
             'content' => trim($_POST['content']),
             'user_id' => $_SESSION['user_id'],
             'title_err' => '',
-            'content_err' => ''
-            ];
+            'content_err' => '',
+            'number_err' => ''
+                    ];
             //valider le titre
             if(empty($data['title'])){
                 $data['title_err'] = 'Veuillez entrer votre titre';
@@ -41,9 +42,12 @@ class Admin extends controller{
             if(empty($data['content'])){
             $data['content_err'] = 'Veuillez entrer le contenu du chapitre';
             }
+            if(empty($data['number_e'])){
+                $data['number_err'] = 'Veuillez entrer un numéro d\'épisode';
+            }
 
             //s'assurrer qu'il n'y a pas des erreurs
-            if(empty($data['title_err']) && empty($data['content_err'])){
+            if(empty($data['title_err']) && empty($data['content_err'] && empty($data['number_err']))){
             //validation
             if($this->postModel->addPost($data)){
                 flash('post_message','Chapitre ajouté');
@@ -61,7 +65,8 @@ class Admin extends controller{
             }else{
                 $data = [
                 'title' => '',
-                'content' => ''
+                'content' => '',
+                'number_e' => '',
                ];
 
             $this->view('admin/add', $data);

@@ -10,7 +10,7 @@ class Post{
     public function getPosts(){
         $this->db->query('SELECT *,substring(content,1,190) AS sub_content ,
         DATE_FORMAT(created_at,\'%d/%m/%Y à %Hh%imin%ss\') AS
-        c_date FROM posts ORDER BY c_date ASC');
+        c_date FROM posts ORDER BY number_e ASC');
 
         //method resultSet pour renvoyer plus qu'un résultat
 
