@@ -24,16 +24,21 @@
         </div>
       </div>
     </article>
-    <article class="comment">
+
+    <article class="comments">
     <div class="container">
     <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
     <h2>Commentaires</h2>
+    <?php foreach ($data['comments'] as $comments) : ?>
 
-  <?php foreach ($data['comments'] as $comments) : ?>
+    <div class="form-group">
+      <p><strong><?php echo $comments->author ;?></strong> le <?php echo $comments->comment_date_fr; ?></p>
+    </div>
+    <div class ="form-group floating-label-form-group controls">
+      <p><?php echo $comments->comment;?><button type="submit" class="btn btn-danger pull-right  report" id="sendMessageButton">Signaler</button></p>
 
-    <p><strong><?php echo $comments->comment ;?></strong> le <?php echo $comments->comment_date_fr; ?></p>
-    <p><?php echo $comments->comment;?></p>
+    </div>
   <?php endforeach;?>
   </div>
   </div>
