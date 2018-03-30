@@ -29,7 +29,6 @@
     <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
     <h2>Commentaires</h2>
-    <?php var_dump($data['comments']); ?>
 
   <?php foreach ($data['comments'] as $comments) : ?>
 
