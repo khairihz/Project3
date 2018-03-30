@@ -22,7 +22,8 @@
                 'post'=> $post,
                 'comments'=>$comments
             ];
-
             $this->view('posts/show', $data);
+
+            }
         }
-    }
+    
