@@ -1,3 +1,4 @@
+
 <?php  require APPROOT .'/views/inc/header.php'; ?>
 <header class="masthead" style="background-image: url('<?php echo URLROOT; ?>/bootstrap/img/post-bg.jpg')">
       <div class="overlay"></div>
@@ -18,59 +19,40 @@
     <article>
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="col-lg-12 col-md-10">
             <p><?php echo $data['post']->content ?></p>
           </div>
         </div>
       </div>
     </article>
-
-    <article class="comments">
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-    <h2>Commentaires</h2>
-    <?php foreach ($data['comments'] as $comments) : ?>
-
-    <div class="form-group">
-      <p><strong><?php echo $comments->author ;?></strong> le <?php echo $comments->comment_date_fr; ?></p>
-    </div>
-    <div class ="form-group floating-label-form-group controls">
-      <p><?php echo $comments->comment;?></p>
-      <div class="form-group">
-              <button type="submit" class="btn btn-danger pull-right mb-3 !important" id="sendMessageButton">Signaler</button>
-            </div>
-
-    </div>
-  <?php endforeach;?>
+    <?php  require APPROOT .'/views/Comments/showComment.php'; ?>
+    <div>
   </div>
-  </div>
-  </div>
-
-    </article>
-
     <article>
+    <!-- Hard code Comment system -->
+    
+    <?php var_dump($data['id']); ?>
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-          <form action="<?php URLROOT;?>/posts/comment/<?php echo $data['id']; ?>" name="sentMessage" id="contactForm" novalidate method="post">
+          <div class="col-lg-12 col-md-10 mx-auto">
+          <form action="<?php URLROOT;?>/posts/add" name="sentMessage" id="contactForm" novalidate method="post">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="author">Nom</label>
                 <input type="text" class="form-control <?php echo (!empty(@$data
-                ['title_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Nom" id="name" value="<?php $data['title'];?>">
-                <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
+                ['author_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Nom" id="name" value="<?php $data['author'];?>">
+                <span class="invalid-feedback"><?php echo @$data['author_err']; ?></span>
               </div>
             </div>
             
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
-                <label for="content">Message</label>
+                <label for="comment">Message</label>
                 <textarea rows="5" class="form-control <?php echo (!empty(@$data
-                ['content_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Message" id="message" 
-                <?php echo $data['content'];?>>
+                ['comment_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Message" id="message" 
+                <?php echo $data['comment'];?>>
                 </textarea>
-                <span class="invalid-feedback"><?php echo @$data['content_err']; ?></span>
+                <span class="invalid-feedback"><?php echo @$data['comment_err']; ?></span>
               </div>
             </div>
             <br>

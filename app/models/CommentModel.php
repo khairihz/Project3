@@ -1,6 +1,7 @@
 <?php
 
-class comments{
+
+class CommentModel{
     private $db;
     public function __construct(){
         //instancier la base des données
@@ -8,7 +9,7 @@ class comments{
     }
     public function getComments($id){
 
-        $this->db->query('SELECT id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
+        $this->db->query('SELECT *,id, post_id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
     comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date DESC');
 
     $this->db->bind(':id',$id);

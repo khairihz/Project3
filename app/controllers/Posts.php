@@ -3,7 +3,7 @@
     class Posts extends Controller {
         public function __construct(){
             $this->postModel = $this->model('Post');
-            $this->commentsModel =$this->model('Comments');
+            $this->commentModelModel =$this->model('CommentModel');
         }
         
         public function index(){
@@ -17,13 +17,14 @@
         //
         public function show($id){
             $post = $this->postModel->getPostById($id);
-            $comments = $this->commentsModel->getComments($id);
+            $comments = $this->commentModelModel->getComments($id);
             $data =[
+                'id' => $id,
                 'post'=> $post,
-                'comments'=>$comments
+                'comments'=>$comments,
+                'post_id' => $_SESSION['post_id']
             ];
             $this->view('posts/show', $data);
 
             }
-        }
-    
+}
