@@ -44,10 +44,9 @@ class CommentModel{
             return false ;
         }
         }
-    public function report($data){
-        $this->db->query('UPDATE comments SET report = :report +1 WHERE id = :id');
-        $this->db->bind(':id',$data['id']);
-        $this->db->bind(':report', $data['report']);
+    public function report($id){
+        $this->db->query('UPDATE comments SET report = 1 WHERE id = :id');
+        $this->db->bind(':id',$id);
 
         //Execute
         if($this->db->execute()){

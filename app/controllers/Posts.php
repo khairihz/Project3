@@ -34,16 +34,16 @@
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Assainir le tableau des articles
             $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING);
-
+            $_SESSION['test'] = $_POST ;
             $data = [
-            'id' => $id,
+            'post_id' => $id,
             'author' => trim($_POST['author']),
             'comment' => trim($_POST['comment']),
             'title_err' => '',
             'content_err' => '',
             'number_err' => ''
                     ];
-            //valider le titre
+            /*//valider le titre
             if(empty($data['author'])){
                 $data['author_err'] = 'Veuillez entrer votre nom';
             }
@@ -51,25 +51,25 @@
             //valider le contenu
             if(empty($data['comment'])){
             $data['comment_err'] = 'Veuillez entrer votre commentaire';
-            }
+            }*/
 
             //s'assurrer qu'il n'y a pas des erreurs
-            if(empty($data['author_err']) && empty($data['comment_err'])){
+            //if(empty($data['author_err']) && empty($data['comment_err'])){
             //validation
-            if($this->commentModelModel->addComment($data)){
+            //($this->commentModelModel->addComment($data))
                 flash('post_message','Commentaire ajouté');
-                redirect('posts/show');
-            }else{
+                header('location'.URLROOT.'/posts/show/'.$id);
+            /*else{
                 die('une erreur se produite');
-            }
+            }*/
 
-            }else{
+            }/*else{
             // charger le view
             $this->view('posts/show', $data);
 
-            }
+            }*/
 
-            }else{
+            }/*else{
                 $data = [
                 'author' => '',
                 'comment' => ''
@@ -77,15 +77,15 @@
 
             $this->view('posts/show', $data);
 
-            }
-    }
-    public function report($id){
+            }*/
+    
+    public function report($id ,$post_id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            if($this->commentModelModel->report($data)){
-                $post = $this->postModel->getPostById($id);
-                $data=['id'=>$id];
+            if($this->commentModelModel->report($id)){
+                $post = $this->postModel->getPostById($post_id);
+                $data=['post_id'=>$post_id];
                 flash('post_message','Commentaire signalé');
-                header('location:'.URLROOT.'/posts/show/'.$data['id']);
+                header('location:'.URLROOT.'/posts/show/'.$data['post_id']);
             } else{
                 die('Quelque chose a mal tourné');
             }

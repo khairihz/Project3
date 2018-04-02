@@ -15,7 +15,7 @@
       <?php foreach ($data['comments'] as $comments) : ?>
       <td><strong><?php echo $comments->author; ?></strong> :</td>
       <td><?php echo $comments->comment;?></td>
-      <td><form class="pull-right" action="<?php echo URLROOT; ?>/posts/report/<?php echo $comments->id; ?>" method="post" >
+      <td><form class="pull-right" action="<?php echo URLROOT; ?>/posts/report/<?php echo $comments->id; ?>/<?php echo $comments->post_id ;?>" method="post" >
   
       <input type="submit" value="Signaler" class="btn btn-danger">
   
