@@ -55,7 +55,12 @@ class Post{
         $row = $this->db->single();
         return $row;
     }
-
+    public function getId($id){
+        $this->db->query('SELECT id FROM posts WHERE id=:id');
+        $this->db->bind(':id',$id);
+        $lastId = $this->db->lastInsertId();
+        return $lastId;
+    }
     public function deletePost($id){
 
         $this->db->query('DELETE FROM  posts WHERE id = :id');

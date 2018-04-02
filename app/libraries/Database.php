@@ -83,5 +83,5 @@
         // Obtenir le nombre de lignes
         public function rowCount(){
             return $this->stmt->rowCount();
-        }
+        } 
  }
