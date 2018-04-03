@@ -28,60 +28,10 @@
                 $this->view('posts/show', $data);
             }
         }
-
-            public function addComments($id){
-
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            // Assainir le tableau des articles
-            $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING);
-            $_SESSION['test'] = $_POST ;
-            $data = [
-            'post_id' => $id,
-            'author' => trim($_POST['author']),
-            'comment' => trim($_POST['comment']),
-            'title_err' => '',
-            'content_err' => '',
-            'number_err' => ''
-                    ];
-            /*//valider le titre
-            if(empty($data['author'])){
-                $data['author_err'] = 'Veuillez entrer votre nom';
-            }
-
-            //valider le contenu
-            if(empty($data['comment'])){
-            $data['comment_err'] = 'Veuillez entrer votre commentaire';
-            }*/
-
-            //s'assurrer qu'il n'y a pas des erreurs
-            //if(empty($data['author_err']) && empty($data['comment_err'])){
-            //validation
-            //($this->commentModelModel->addComment($data))
-                flash('post_message','Commentaire ajouté');
-                header('location'.URLROOT.'/posts/show/'.$id);
-            /*else{
-                die('une erreur se produite');
-            }*/
-
-            }/*else{
-            // charger le view
-            $this->view('posts/show', $data);
-
-            }*/
-
-            }/*else{
-                $data = [
-                'author' => '',
-                'comment' => ''
-                ];
-
-            $this->view('posts/show', $data);
-
-            }*/
     
-    public function report($id ,$post_id){
+    public function report($comment_id ,$post_id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            if($this->commentModelModel->report($id)){
+            if($this->commentModelModel->report($comment_id)){
                 $post = $this->postModel->getPostById($post_id);
                 $data=['post_id'=>$post_id];
                 flash('post_message','Commentaire signalé');
@@ -93,5 +43,8 @@
             redirect('posts/show');
         }
     }
+
     }
     
+    
+ 

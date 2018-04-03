@@ -41,6 +41,14 @@ class Core {
                 unset($url[1]);
             }
         }
+        if(isset($url[2])){
+            // Vérifier si la méthode exist dans le controlleur , exemple method_exists($pages = new Pages , about())
+                    if(method_exists($this->currentController, $url[2])){
+                    $this->currentMethod = $url[2];
+                    //unset 1 index
+                    unset($url[2]);
+                }
+            }
         // Obtenir le paramétre de la 3éme valeur de l'url
         $this->params = $url ? array_values($url) : [];
         

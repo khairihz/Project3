@@ -9,7 +9,7 @@ class CommentModel{
     }
     public function getComments($id){
 
-        $this->db->query('SELECT *,id, post_id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
+        $this->db->query('SELECT *,comment_id, post_id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
     comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date DESC');
 
     $this->db->bind(':id',$id);
@@ -27,15 +27,14 @@ class CommentModel{
 
     public function addComment($data)
     {
-        $this->db->query ("INSERT INTO comments(author, comment, comment_date) VALUES(:post_id,:author,:comment, NOW())
-                            WHERE comments.post_id = {$id}");
+        $this->db->query ('INSERT INTO comments (comment_id,post_id, author, comment,comment_date) VALUES(:comment_id, :post_id, :author, :comment, :NOW())
+        WHERE post_id = :post.id');
         //Récupération en paramètres les informations dont on a besoin
         // Bind Values
-        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':comment_id', $data['comment_id']);
         $this->db->bind(':post_id', $data['post_id']);
         $this->db->bind(':author', $data['author']);
         $this->db->bind(':comment', $data['comment']);
-        $this->db->bind(':comment_date', $data['comment_date']);
 
         //Execute
         if($this->db->execute()){
@@ -44,9 +43,9 @@ class CommentModel{
             return false ;
         }
         }
-    public function report($id){
-        $this->db->query('UPDATE comments SET report = 1 WHERE id = :id');
-        $this->db->bind(':id',$id);
+    public function report($comment_id){
+        $this->db->query('UPDATE comments SET report = 1 WHERE comment_id = :comment_id');
+        $this->db->bind(':comment_id',$comment_id);
 
         //Execute
         if($this->db->execute()){
