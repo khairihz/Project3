@@ -25,7 +25,7 @@ class CommentModel{
         return $row;
     }
 
-    public function addComment($data)
+    /*public function addComment($data)
     {
         $this->db->query ('INSERT INTO comments (comment_id,post_id, author, comment,comment_date) VALUES(:comment_id, :post_id, :author, :comment, :NOW())
         WHERE post_id = :post.id');
@@ -42,7 +42,24 @@ class CommentModel{
         }else {
             return false ;
         }
-        }
+        }*/
+
+    public function save($insert) {
+        // @todo Valider les données
+        $this->db->query("INSERT INTO comments (comment_id,post_id, author, comment) 
+        VALUES(:comment_id, :post_id, :author, :comment)");
+            $this->db->bind(':comment_id' , $insert['comment_id']);
+            $this->db->bind(':post_id' , $insert['post_id']);
+            $this->db->bind(':author' , $insert['author']);
+            $this->db->bind(':comment' , $insert['comment']);
+
+            if($this->db->execute()){
+                return true ;
+            }else {
+                return false ;
+            }
+    }
+    
     public function report($comment_id){
         $this->db->query('UPDATE comments SET report = 1 WHERE comment_id = :comment_id');
         $this->db->bind(':comment_id',$comment_id);
