@@ -24,6 +24,12 @@ class CommentModel{
         $row = $this->db->single();
         return $row;
     }
+    public function adminComment(){
+        $this->db->query('SELECT * FROM comments ORDER BY post_id DESC');
+    
+        $results = $this->db->resultSet();
+        return $results;  
+    }
 
     /*public function addComment($data)
     {
@@ -72,5 +78,10 @@ class CommentModel{
         }
         
         }
+    public function adminReport(){
+        $this->db->query('SELECT * FROM comments WHERE report = 1');
+        $results = $this->db->resultSet();
+        return $results;
+    }
     }
 

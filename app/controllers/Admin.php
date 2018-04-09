@@ -2,7 +2,7 @@
 class Admin extends controller{
     public function __construct(){
         $this->postModel = $this->model('Post');
-        $this->userModel = $this->model('User');
+        $this->commentModelModel = $this->model('CommentModel');
     }
     public function index(){
                 if(!isLoggedIn()){
@@ -142,5 +142,27 @@ class Admin extends controller{
             }else{
                 redirect('admin');
             }
+        }
+        public function Comments(){
+            if(!isLoggedIn()){
+                redirect('users/login');
+            }
+                // renvoyer les épisodes
+                $comments = $this->commentModelModel->adminComment();
+                $data = [
+                        'comments' => $comments
+                ];
+                $this->view('admin/comments',$data);
+
+        }
+        public function Report(){
+            if(!isLoggedIn()){
+                redirect('users/login');
+            }
+            $comments = $this->commentModelModel->adminReport();
+            $data = [
+                    'reports' => $reports
+            ];
+            $this->view('admin/report',$data);
         }
 }
