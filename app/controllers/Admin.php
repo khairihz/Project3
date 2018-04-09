@@ -165,4 +165,19 @@ class Admin extends controller{
             ];
             $this->view('admin/report',$data);
         }
+        public function Commentdelete($comment_id){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                //$post = $this->postModel->getPostById($id);
+
+                if($this->commentModelModel->deleteComment($comment_id)){
+                    flash('post_message','commentaire supprimé');
+                    redirect('admin/report');
+                } else{
+                    die('Quelque chose a mal tourné');
+                }
+            }else{
+                redirect('admin');
+            }
+        }
 }

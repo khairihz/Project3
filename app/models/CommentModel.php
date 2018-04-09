@@ -83,5 +83,17 @@ class CommentModel{
         $results = $this->db->resultSet();
         return $results;
     }
+    public function deleteComment($comment_id){
+    $this->db->query('DELETE FROM  comments WHERE comment_id = :comment_id');
+    // Bind Values
+    $this->db->bind(':comment_id',$comment_id);
+
+    //Execute
+    if($this->db->execute()){
+        return true ;
+    }else {
+        return false ;
     }
+    }
+}
 
