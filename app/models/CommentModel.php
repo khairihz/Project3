@@ -10,7 +10,7 @@ class CommentModel{
     public function getComments($id){
 
         $this->db->query('SELECT *,comment_id, post_id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
-    comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date DESC');
+    comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date_fr DESC');
 
     $this->db->bind(':id',$id);
     $results = $this->db->resultSet();
@@ -52,8 +52,8 @@ class CommentModel{
 
     public function save($insert) {
         // @todo Valider les données
-        $this->db->query("INSERT INTO comments (comment_id,post_id, author, comment) 
-        VALUES(:comment_id, :post_id, :author, :comment)");
+        $this->db->query("INSERT INTO comments (comment_id,post_id, author, comment,comment_date) 
+        VALUES(:comment_id, :post_id, :author, :comment , NOW())");
             $this->db->bind(':comment_id' , $insert['comment_id']);
             $this->db->bind(':post_id' , $insert['post_id']);
             $this->db->bind(':author' , $insert['author']);

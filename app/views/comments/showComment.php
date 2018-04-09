@@ -11,7 +11,6 @@
       <th></th>
     </tr>
     <tr>
-    <?php var_dump($data['id']); ?>
       <?php foreach ($data['comments'] as $comments) : ?>
       <td><strong><?php echo $comments->author; ?></strong> :</td>
       <td><?php echo $comments->comment;?></td>

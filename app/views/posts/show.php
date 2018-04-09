@@ -31,21 +31,22 @@
   
   <div class="container">
 <div class="row">
-<div class="col-lg-8 col-md-10 mx-auto comment">
-<?php var_dump($data['id']); ?>
+<div class="col-lg-12 col-md-10 mx-auto ">
+
 <form action ="<?php echo URLROOT; ?>/posts/add/<?php echo $data['post']->id ?>" method = "post">
     <div class="form-group">
         <label for="title">Nom</label>
-        <input type="text" name ="author" placeholder="Nom" class="form-control"value="<?php @$save['author'];?>">
+        <input type="text" name ="author" placeholder="Nom" class="form-control" required data-validation-required-message="Veuillez entrer votre nom ." value="<?php @$data['author'];?>">
     </div>
     <div class="form-group">
-        <label for= "content">Message :</label>
-        <textarea name="comment" placeholder="Commentaire"
+        <label for= "comment">Message :</label>
+        <textarea name="comment" placeholder="Commentaire" 
         class="form-control" <?php echo @$data['comment'];?>>
         </textarea>
+        <span class="invalid-feedback" required data-validation-required-message="Veuillez entrer votre nom ." ></span>
     </div>
     <div class="form-group">
-        <input name= "submit" type="submit" class="btn btn-default" value="Valider">
+        <input name= "submit" type="submit" class="btn btn-primary" value="Valider">
     </div>
 
 <hr>

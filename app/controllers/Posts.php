@@ -20,14 +20,14 @@
         public function show($id){
             $comments = $this->commentModelModel->getComments($id);
             $post = $this->postModel->getPostById($id);
-            if($comments){
+            
                 $data =[
                     'id' => $id,
                     'post'=> $post,
                     'comments'=>$comments,
                 ];
                 $this->view('posts/show', $data);
-            }}
+            }
             public function add($post_id){
             if($_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING)){
                 $insert = [
@@ -37,7 +37,7 @@
                     'comment'      => $_POST['comment'],
                 ];}
                     $this->commentModelModel->save($insert);
-                    flash('post_message','Chapitre ajouté');
+                    flash('post_message','commentaire ajouté');
                     header('location:'.URLROOT.'/posts/show/'.$insert['post_id']);}
 
     
