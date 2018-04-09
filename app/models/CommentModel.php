@@ -79,7 +79,7 @@ class CommentModel{
         
         }
     public function adminReport(){
-        $this->db->query('SELECT * FROM comments WHERE report = 1');
+        $this->db->query('SELECT * FROM comments WHERE report = 1 ORDER BY post_id DESC');
         $results = $this->db->resultSet();
         return $results;
     }

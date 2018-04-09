@@ -159,9 +159,9 @@ class Admin extends controller{
             if(!isLoggedIn()){
                 redirect('users/login');
             }
-            $comments = $this->commentModelModel->adminReport();
+            $report_table = $this->commentModelModel->adminReport();
             $data = [
-                    'reports' => $reports
+                    'reports' => $report_table
             ];
             $this->view('admin/report',$data);
         }
