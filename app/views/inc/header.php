@@ -21,6 +21,10 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo URLROOT; ?>/bootstrap/css/clean-blog.css" rel="stylesheet">
+    <!-- Tinymce -->
+    <script type = "text/javascript" src="<?php echo URLROOT; ?>/dashboard/js/jquery.min.js"></script>
+    <script type = "text/javascript" src ="<?php echo URLROOT; ?>/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src ="<?php echo URLROOT; ?>/tinymce/init-tinymce.js"></script>
 
   </head>
   <body>

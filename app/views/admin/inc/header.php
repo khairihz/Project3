@@ -8,7 +8,9 @@
     <!-- Bootstrap core CSS -->
     <link href="<?php echo URLROOT; ?>/dashboard/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo URLROOT; ?>/dashboard/css/style.css" rel="stylesheet">
-    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+    <script type = "text/javascript" src="<?php echo URLROOT; ?>/dashboard/js/jquery.min.js"></script>
+    <script type = "text/javascript" src ="<?php echo URLROOT; ?>/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src ="<?php echo URLROOT; ?>/tinymce/init-tinymce.js"></script>
   </head>
   <body>
   <?php require APPROOT .'/views/admin/inc/navbar.php'; ?>

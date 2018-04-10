@@ -12,9 +12,8 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?php echo URLROOT; ?>/admin/index">Tableau de bord</a></li>
-            <li><a href="posts.html">Épisodes</a></li>
-            <li><a href="comments.html">Commentaires</a></li>
-            <li><a href="reports.html">Commentaires signalés</a></li>
+            <li><a href="<?php echo URLROOT; ?>/admin/comments">Commentaires</a></li>
+            <li><a href="<?php echo URLROOT; ?>/admin/report">Commentaires signalés</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Bienvenue, Jean</a></li>

@@ -22,15 +22,15 @@
 
             <div class="form-group">
                 <label for= "content">Contenu :</label>
-                <textarea name="content" placeholder="Veuillez écrire votre contenu"
-                class="form-control <?php echo (!empty(@$data
+                <textarea id ="content" name="content" placeholder="Veuillez écrire votre contenu"
+                class="form-control  <?php echo (!empty(@$data
                 ['content_err'])) ? 'is-invalid' : '' ; ?>" <?php echo $data['content'];?>>
                 </textarea>
                 <span class="invalid-feedback"><?php echo @$data['content_err']; ?></span>
             </div>
 
             <div class="form-group">
-                <input name= "submit" type="submit" class="btn btn-default" value="Valider">
+                <input name= "submitbtn" type="submit" class="btn btn-default" value="Valider">
             </div>
         </form>
         </div>

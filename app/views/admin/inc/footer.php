@@ -3,9 +3,7 @@
   <p>Copyright Kheireddine hezzi &copy; 2018</p>
 </footer>
 
-<script>
-  CKEDITOR.replace( 'content' );
-</script>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
