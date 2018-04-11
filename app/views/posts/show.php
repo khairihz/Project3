@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-10">
-            <p><?php echo $data['post']->content ?></p>
+            <p><?php echo htmlspecialchars_decode($data['post']->content) ?></p>
           </div>
         </div>
       </div>
