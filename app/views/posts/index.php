@@ -24,7 +24,7 @@
                 <?php echo $post->title;?>
               </h2>
               <h3 class="post-subtitle">
-                <?php echo $post->sub_content;?>...
+                <?php echo htmlspecialchars_decode($post->sub_content);?>...
               </h3>
             </a>
             <p class="post-meta">Écrit le 
