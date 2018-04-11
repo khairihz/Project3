@@ -79,7 +79,7 @@ class Admin extends controller{
                 redirect('users/login');
             }
             // Assainir le tableau des articles
-            $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array (INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
             $data = [
             'id' => $id,
