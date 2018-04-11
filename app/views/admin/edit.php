@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
             <label>Contenu</label>
-            <textarea name="content" class="form-control <?php echo (!empty(@$data
+            <textarea id ="content" name="content" class="form-control <?php echo (!empty(@$data
             ['content_err'])) ? 'is-invalid' : '' ; ?>" placeholder="Page Body">
             <?php echo $data['content'];?>
             </textarea>
