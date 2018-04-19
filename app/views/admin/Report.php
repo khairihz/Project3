@@ -51,17 +51,18 @@
                         <th>auteur</th>
                         <th>commentaire</th>
                         <th></th>
+                        <th></th>
                       </tr>
                       <tr>
                       <?php foreach ($data['reports'] as $reports) : ?>
                         <td><?php echo $reports->post_id; ?></td>
                         <td><?php echo $reports->author;?></td>
                         <td><?php echo $reports->comment; ?></td>
+                        <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/CommentValidate/<?php echo $reports->comment_id; ?>">Approuvé</a></td>
                         <td><form class="pull-right" action="<?php echo URLROOT; ?>/admin/Commentdelete/<?php echo $reports->comment_id; ?>" method="post" >
-
-                        <input type="submit" value="supprimer" class="btn btn-danger">
-
-                        </form></td>
+                              <input type="submit" value="supprimer" class="btn btn-danger">
+                            </form>
+                        </td>
                       </tr>
                       <?php //$_SESSION['max_number'] = $post->number_e; ?>
                       <?php endforeach ; ?>

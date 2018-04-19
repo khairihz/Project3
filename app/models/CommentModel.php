@@ -78,6 +78,18 @@ class CommentModel{
         }
         
         }
+        public function validate($comment_id){
+            $this->db->query('UPDATE comments SET report = 0 WHERE comment_id = :comment_id');
+            $this->db->bind(':comment_id',$comment_id);
+    
+            //Execute
+            if($this->db->execute()){
+                return true ;
+            }else {
+                return false ;
+            }
+            
+            }
     public function adminReport(){
         $this->db->query('SELECT * FROM comments WHERE report = 1 ORDER BY post_id DESC');
         $results = $this->db->resultSet();

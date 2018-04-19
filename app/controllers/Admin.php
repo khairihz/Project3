@@ -165,6 +165,16 @@ class Admin extends controller{
             ];
             $this->view('admin/report',$data);
         }
+        public function CommentValidate($comment_id){
+            //if($_SERVER['REQUEST_METHOD'] == 'POST')
+                if($this->commentModelModel->validate($comment_id)){
+                     flash('post_message','Commentaire validé');
+                     redirect('admin/report');
+
+            }else{
+                die('Queleque chose a mal touné');
+            }
+        }
         public function Commentdelete($comment_id){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
