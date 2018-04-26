@@ -81,6 +81,11 @@
             $this->execute();
             return $this->stmt->fetch(PDO::FETCH_OBJ);
         }
+        public function single_int(){
+            $this->execute();
+            $number = $this->stmt->fetch(PDO :: FETCH_ASSOC);
+            return $number;
+        }
         // Obtenir le nombre de lignes
         public function rowCount(){
             return $this->stmt->rowCount();
