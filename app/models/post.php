@@ -18,6 +18,16 @@ class Post{
 
         return $results;
     }
+    public function NbComment(){
+        $this->db->query('SELECT COUNT(*) AS total FROM comments');
+
+        return $this->db->single_int();
+    }
+    public function NbReport(){
+        $this->db->query('SELECT COUNT(*) AS total_R FROM comments WHERE Report = 1');
+
+        return $this->db->single_int();
+    }
     public function addPost($data){
         $this->db->query('INSERT INTO posts (title, user_id, content) VALUES(:title, :user_id , :content)');
 
