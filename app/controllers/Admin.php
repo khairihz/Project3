@@ -9,9 +9,13 @@ class Admin extends controller{
             redirect('users/login');
         }
             // renvoyer les épisodes
+            $nb_comment = $this->postModel->NbComment();
             $posts = $this->postModel->getPosts();
+            $nb_Report = $this->postModel->NbReport();
             $data = [
-                    'admin' => $posts
+                    'admin' => $posts,
+                    'nbcomment' => $nb_comment,
+                    'nbreport' => $nb_Report
             ];
             $this->view('admin/index',$data);
     }
