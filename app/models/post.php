@@ -18,6 +18,10 @@ class Post{
 
         return $results;
     }
+    public function Nbposts(){
+        $this->db->query('SELECT COUNT(*) AS total FROM posts');
+        return $this->db->single_int();
+    }
     public function NbComment(){
         $this->db->query('SELECT COUNT(*) AS total FROM comments');
 

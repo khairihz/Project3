@@ -12,8 +12,10 @@ class Admin extends controller{
             $nb_comment = $this->postModel->NbComment();
             $posts = $this->postModel->getPosts();
             $nb_Report = $this->postModel->NbReport();
+            $nb_Posts = $this->postModel->Nbposts();
             $data = [
                     'admin' => $posts,
+                    'nbposts' => $nb_Posts,
                     'nbcomment' => $nb_comment,
                     'nbreport' => $nb_Report
             ];
@@ -153,8 +155,14 @@ class Admin extends controller{
             }
                 // renvoyer les épisodes
                 $comments = $this->commentModelModel->adminComment();
+                $nb_comment = $this->postModel->NbComment();
+                $nb_Report = $this->postModel->NbReport();
+                $nb_Posts = $this->postModel->Nbposts();
                 $data = [
-                        'comments' => $comments
+                        'comments' => $comments,
+                        'nbposts' => $nb_Posts,
+                        'nbcomment' => $nb_comment,
+                        'nbreport' => $nb_Report
                 ];
                 $this->view('admin/comments',$data);
 
@@ -164,8 +172,14 @@ class Admin extends controller{
                 redirect('users/login');
             }
             $report_table = $this->commentModelModel->adminReport();
+            $nb_comment = $this->postModel->NbComment();
+            $nb_Report = $this->postModel->NbReport();
+            $nb_Posts = $this->postModel->Nbposts();
             $data = [
-                    'reports' => $report_table
+                    'reports' => $report_table,
+                    'nbposts' => $nb_Posts,
+                    'nbcomment' => $nb_comment,
+                    'nbreport' => $nb_Report
             ];
             $this->view('admin/report',$data);
         }
