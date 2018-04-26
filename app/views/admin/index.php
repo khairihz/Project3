@@ -27,13 +27,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="well dash-box overview2">
-                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 43</h2>
+                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo $data['nbcomment']['total']; ?></h2>
                     <h4>Commentaires</h4>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="well dash-box overview3">
-                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 7</h2>
+                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> <?php echo $data['nbreport']['total_R']; ?></h2>
                     <h4>Commentaires Signalés</h4>
                   </div>
                 </div>
