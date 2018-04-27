@@ -33,7 +33,7 @@
                       </tr>
                       <tr>
                       <?php foreach ($data['admin'] as $post) : ?>
-                        <td><?php echo $post->id; ?></td>
+                        <td><?php echo $post->number_e; ?></td>
                         <td><?php echo $post->title;?></td>
                         <td><?php echo $post->c_date ?></td>
                         <td><a class="btn btn-default" href="<?php echo URLROOT; ?>/admin/edit/<?php echo $post->id; ?>">Modifier</a></td>

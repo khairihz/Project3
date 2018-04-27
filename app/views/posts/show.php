@@ -14,6 +14,9 @@
         </div>
       </div>
     </header>
+    <div>
+    <?php flash('post_message');?>
+  </div>
     <!-- Post Content -->
     <article>
       <div class="container">
@@ -25,9 +28,6 @@
       </div>
     </article>
     <?php  require APPROOT .'/views/Comments/showComment.php'; ?>
-    <div>
-    <?php flash('post_message');?>
-  </div>
   
   <div class="container">
 <div class="row">

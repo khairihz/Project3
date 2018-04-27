@@ -33,12 +33,13 @@ class Post{
         return $this->db->single_int();
     }
     public function addPost($data){
-        $this->db->query('INSERT INTO posts (title, user_id, content) VALUES(:title, :user_id , :content)');
+        $this->db->query('INSERT INTO posts (title, user_id, content, number_e) VALUES(:title, :user_id , :content, :number_e)');
 
         // Bind Values
         $this->db->bind(':title', $data['title']);
         $this->db->bind(':user_id', $data['user_id']);
         $this->db->bind(':content', $data['content']);
+        $this->db->bind(':number_e', $data['number_e']);
 
         //Execute
         if($this->db->execute()){

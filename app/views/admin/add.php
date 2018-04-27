@@ -12,11 +12,18 @@
 
         <div class="panel-body">
         <form action ="<?php echo URLROOT; ?>/admin/add" method = "post">
+
             <div class="form-group">
                 <label for="title">Titre de l'épisode</label>
                 <input type="text" name ="title" placeholder="Titre d'épisode" class="form-control <?php echo (!empty(@$data
                 ['title_err'])) ? 'is-invalid' : '' ; ?>" value="<?php $data['title'];?>">
                 <span class="invalid-feedback"><?php echo @$data['title_err']; ?></span>
+            </div>
+            <div class="form-group">
+                <label for="number_e">Numéro de l'épisode</label>
+                <input type="text" name ="number_e" placeholder="Numéro de l'épisode" class="form-control <?php echo (!empty(@$data
+                ['number_err'])) ? 'is-invalid' : '' ; ?>" value="<?php $data['number_e'];?>">
+                <span class="invalid-feedback"><?php echo @$data['number_err']; ?></span>
             </div>
 
             <div class="form-group">

@@ -35,6 +35,7 @@ class Admin extends controller{
             'title' => trim($_POST['title']),
             'content' => trim($_POST['content']),
             'user_id' => $_SESSION['user_id'],
+            'number_e' => trim($_POST['number_e']),
             'title_err' => '',
             'content_err' => '',
             'number_err' => ''
