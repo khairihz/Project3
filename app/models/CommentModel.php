@@ -10,7 +10,7 @@ class CommentModel{
     public function getComments($id){
 
         $this->db->query('SELECT *,comment_id, post_id, author, comment, DATE_FORMAT(comment_date,\'%d/%m/%Y à %Hh%imin%ss\') AS
-    comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date_fr DESC');
+    comment_date_fr FROM comments WHERE post_id = :id ORDER BY comment_date_fr ASC');
 
     $this->db->bind(':id',$id);
     $results = $this->db->resultSet();

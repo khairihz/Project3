@@ -31,6 +31,9 @@ body {
 .login{
   margin-top: 300px;
 }
+#comment{
+  height: 200px;
+}
 
 /*CSS du template */
 

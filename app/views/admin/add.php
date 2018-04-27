@@ -2,10 +2,9 @@
 <section id="main">
     <div class="container">
         <div class="row">
-        <?php require APPROOT .'/views/admin/inc/widget.php';?>
  
 <!-- Ajout d'épisode -->
-    <div class="col-md-9">
+    <div class="col-md-12">
         <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Modifier l'épisode</h3>

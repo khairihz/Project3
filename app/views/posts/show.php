@@ -1,6 +1,6 @@
 
 <?php  require APPROOT .'/views/inc/header.php'; ?>
-<header class="masthead" style="background-image: url('<?php echo URLROOT; ?>/bootstrap/img/post-bg.jpg')">
+<header class="masthead" style="background-image: url('<?php echo URLROOT; ?>/bootstrap/img/about-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -35,12 +35,12 @@
 
 <form action ="<?php echo URLROOT; ?>/posts/add/<?php echo $data['post']->id ?>" method = "post">
     <div class="form-group">
-        <label for="title">Nom</label>
+        <label for="title">pseudo</label>
         <input type="text" name ="author" placeholder="Nom" class="form-control" required data-validation-required-message="Veuillez entrer votre nom ." value="<?php @$data['author'];?>">
     </div>
     <div class="form-group">
-        <label for= "comment">Message :</label>
-        <textarea name="comment" placeholder="Commentaire" 
+        <label for= "comment">commentaire :</label>
+        <textarea  id="comment"name="comment" placeholder="Commentaire" 
         class="form-control" <?php echo @$data['comment'];?>>
         </textarea>
         <span class="invalid-feedback" required data-validation-required-message="Veuillez entrer votre nom ." ></span>
