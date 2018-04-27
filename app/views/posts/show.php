@@ -15,7 +15,7 @@
       </div>
     </header>
     <div>
-    <?php flash('post_message');?>
+    <?php flash('post_message');?> 
   </div>
     <!-- Post Content -->
     <article>
